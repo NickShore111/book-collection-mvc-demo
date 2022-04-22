@@ -1,5 +1,6 @@
 # book-collection-mvc-demo
 A demo project of Spring MVC using Thymeleaf, BootStrap, validation and persistence. 
+```	
 	• New Project > Spring Starter Project
 		a. Artifact
 		b. GroupID
@@ -138,5 +139,5 @@ VALUES (NOW(),"The Eternals, the ruling class of the Future, had the power of li
 	• Creating a form
 	
 		
-		
+```		
 ![image](https://user-images.githubusercontent.com/64939708/164745133-590f9f49-7988-476d-89b0-3954a0cbe82c.png)
