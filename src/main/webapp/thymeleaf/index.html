@@ -1,0 +1,55 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Add Book</title>
+<!-- Required meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container" style="max-width: 500px;">
+		<h1>Enter Book Info</h1>
+		<form th:action="@{/books}" th:object="${book}" method="POST" class="form">
+
+			<div class="form-floating mb-3">		
+		 		<input type="text" class="form-control" th:field="*{title}" id="title" placeholder="Title of a book">
+		 		<label for="bookTitle">Book Title</label> 
+		 		<div class="alert alert-warning" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+			</div>
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control"  th:field="*{description}"  id="description" placeholder="About this book"> 
+				<label for="bookDescription">Description</label>
+				<div class="alert alert-warning" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+			</div>
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" th:field="*{language}" id="language" placeholder="Language of this book">
+				<label for="language">Language</label>
+				<div class="alert alert-warning" th:if="${#fields.hasErrors('language')}" th:errors="*{language}"></div>
+			</div>
+			<div class="form-floating mb-3">
+				<input type="number" class="form-control" th:field="*{numberOfPages}" id="numberOfPages" placeholder="Number of pages">
+				<label for="numberOfPages">Pages</label>
+				<div class="alert alert-warning" th:if="${#fields.hasErrors('numberOfPages')}" th:errors="*{numberOfPages}"></div>
+			</div>	
+			
+			<button class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	<div th:insert="books-list :: table"></div>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
