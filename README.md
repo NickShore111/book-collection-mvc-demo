@@ -38,15 +38,15 @@ Group id vs Artifact id for a project – User friendly Tech help (ufthelp.com)
 	
 		spring.jpa.hibernate.ddl-auto=update
 		
-		spring.datasource.url=jdbc:mariadb://localhost:3306/books-library-db
-		spring.datasource.username=root
-		spring.datasource.password=rootpassword
+		spring.datasource.url=jdbc:mariadb://localhost:3306/<book-tracker-db>
+		spring.datasource.username=<username>
+		spring.datasource.password=<password>
 		spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 		
 		spring.thymeleaf.prefix=/thymeleaf/
 		
 	• Create new database in MariaDB matching datasource.url from above
-		○ books-library-db
+		○ <book-tracker-db>
 	• Create our model to structure our data and how Java interacts with a database.
 		
 		@Entity
